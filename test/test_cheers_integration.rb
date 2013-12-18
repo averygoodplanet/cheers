@@ -4,17 +4,18 @@ class TestCheersIntegration < MiniTest::Unit::TestCase
 
   def test_a_name_with_no_vowels
     shell_output = ""
+    # the from IO.popen... to first "end" is the test
+    # simulating the person typing entering "brt"
+    # on name = gets.chomp
     IO.popen('ruby cheers.rb', 'r+') do |pipe|
       pipe.puts("brt")
       pipe.close_write
       shell_output = pipe.read
     end
     expected_output = <<EOS
-What's your name?
-Give me a.. B
-Give me an.. R
-Give me a.. T
-BRT is GRAND!
+   b
+    r
+    t
 EOS
     #I'm not sure if this should be
     #  .... expected_output, shell_output

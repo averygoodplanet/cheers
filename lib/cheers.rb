@@ -7,4 +7,5 @@
 # When given the input of “Abby”. Note: the “a” vs. “an”
 
 puts = "Whats your name?"
-name = gets
+name = gets.chomp
+print name

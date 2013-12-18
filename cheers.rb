@@ -8,3 +8,4 @@
 
 puts = "Whats your name?"
 name = gets
+puts name
